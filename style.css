@@ -1,0 +1,825 @@
+
+/* =====================================
+   RHYTHMHUB MUSIC WEBSITE
+   MAIN CSS FILE
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0a0a12;
+    color: white;
+    line-height: 1.6;
+}
+
+/* =====================================
+   HEADER
+===================================== */
+
+header {
+    width: 100%;
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(10, 10, 18, 0.95);
+    border-bottom: 1px solid #242438;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #c84bff;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #bdbdca;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #ffffff;
+}
+
+nav a.active {
+    border-bottom: 2px solid #c84bff;
+    padding-bottom: 6px;
+}
+
+/* =====================================
+   HERO
+===================================== */
+
+.hero {
+    min-height: 700px;
+    padding: 80px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 75% 45%, #6d24a8 0%, transparent 28%),
+        radial-gradient(circle at 90% 20%, #144f80 0%, transparent 25%),
+        #0a0a12;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.small-title,
+.page-header p:first-child {
+    color: #d26cff;
+    font-size: 13px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(50px, 7vw, 90px);
+    line-height: 1;
+    margin-bottom: 30px;
+}
+
+.hero h1 span,
+.page-header h1 span {
+    background: linear-gradient(90deg, #c84bff, #ff4fa3, #00d9ff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero-content > p {
+    color: #b3b3c0;
+    font-size: 18px;
+    max-width: 570px;
+}
+
+.hero-buttons {
+    margin-top: 35px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+.btn,
+.btn-outline,
+.small-btn {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 50px;
+    padding: 13px 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn {
+    color: white;
+    background: linear-gradient(90deg, #9b3dff, #f03ca8);
+    box-shadow: 0 8px 25px rgba(201, 58, 255, 0.25);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(201, 58, 255, 0.45);
+}
+
+.btn-outline {
+    color: white;
+    border: 1px solid #56566d;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #0a0a12;
+}
+
+/* =====================================
+   MUSIC CIRCLE
+===================================== */
+
+.music-circle {
+    width: 390px;
+    height: 390px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(135deg, #bd3cff, #ff3d9a, #00d5ff);
+
+    box-shadow:
+        0 0 70px rgba(194, 55, 255, 0.35),
+        0 0 100px rgba(0, 210, 255, 0.15);
+
+    animation: float 4s ease-in-out infinite;
+}
+
+.vinyl {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 90px;
+
+    background:
+        repeating-radial-gradient(
+            circle,
+            #15151e 0px,
+            #15151e 8px,
+            #20202c 9px,
+            #15151e 12px
+        );
+
+    box-shadow: 0 0 30px #08080c;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+}
+
+/* =====================================
+   SECTIONS
+===================================== */
+
+.section {
+    padding: 100px 7%;
+}
+
+.section-title {
+    margin-bottom: 45px;
+}
+
+.section-title p {
+    color: #b84cff;
+    letter-spacing: 3px;
+    font-size: 13px;
+}
+
+.section-title h2 {
+    font-size: 42px;
+}
+
+/* =====================================
+   MUSIC CARDS
+===================================== */
+
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.music-card {
+    background: #151520;
+    border: 1px solid #29293b;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.music-card:hover {
+    transform: translateY(-8px);
+    border-color: #a94bff;
+}
+
+.card-image {
+    height: 270px;
+    background-size: cover;
+    background-position: center;
+}
+
+.image-one {
+    background-image:
+        linear-gradient(135deg, rgba(160, 30, 255, .3), rgba(0, 210, 255, .25)),
+        url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=900&q=80");
+}
+
+.image-two {
+    background-image:
+        linear-gradient(135deg, rgba(255, 30, 160, .25), rgba(50, 50, 255, .3)),
+        url("https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=900&q=80");
+}
+
+.image-three {
+    background-image:
+        linear-gradient(135deg, rgba(255, 130, 20, .2), rgba(170, 30, 255, .3)),
+        url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80");
+}
+
+.card-content {
+    padding: 22px;
+    position: relative;
+}
+
+.card-content h3 {
+    font-size: 21px;
+}
+
+.card-content p {
+    color: #9999a9;
+}
+
+.play {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(135deg, #a53dff, #f04fa8);
+}
+
+/* =====================================
+   GRADIENT BANNER
+===================================== */
+
+.gradient-banner {
+    margin: 30px 7% 100px;
+    padding: 60px;
+
+    border-radius: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background:
+        linear-gradient(
+            120deg,
+            #7a22bb,
+            #c13286,
+            #126a91
+        );
+}
+
+.gradient-banner p {
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.gradient-banner h2 {
+    font-size: 40px;
+}
+
+/* =====================================
+   PAGE HEADER
+===================================== */
+
+.page-header {
+    text-align: center;
+    padding: 100px 20px 70px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #342050,
+            transparent 55%
+        );
+}
+
+.page-header h1 {
+    font-size: clamp(45px, 6vw, 70px);
+    margin-bottom: 15px;
+}
+
+.page-header > p:last-child {
+    color: #9999a9;
+}
+
+/* =====================================
+   ARTISTS
+===================================== */
+
+.artist-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.artist-card {
+    background: #151520;
+    border-radius: 22px;
+    overflow: hidden;
+    border: 1px solid #29293b;
+    transition: .3s;
+}
+
+.artist-card:hover {
+    transform: translateY(-8px);
+    border-color: #b744ff;
+}
+
+.artist-image {
+    height: 330px;
+    background-size: cover;
+    background-position: center;
+}
+
+.artist-one {
+    background-image: url("https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80");
+}
+
+.artist-two {
+    background-image: url("https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80");
+}
+
+.artist-three {
+    background-image: url("https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=800&q=80");
+}
+
+.artist-four {
+    background-image: url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=80");
+}
+
+.artist-five {
+    background-image: url("https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80");
+}
+
+.artist-six {
+    background-image: url("https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=800&q=80");
+}
+
+.artist-info {
+    padding: 25px;
+}
+
+.artist-info h2 {
+    margin-bottom: 5px;
+}
+
+.artist-info p {
+    color: #9999a9;
+    margin-bottom: 20px;
+}
+
+.small-btn {
+    padding: 9px 18px;
+    border: 1px solid #5b5b70;
+    color: white;
+    font-size: 13px;
+}
+
+/* =====================================
+   ALBUMS
+===================================== */
+
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+
+.album-card {
+    background: #151520;
+    padding: 20px;
+    border-radius: 22px;
+    border: 1px solid #29293b;
+    transition: .3s;
+}
+
+.album-card:hover {
+    transform: translateY(-8px);
+    border-color: #ca46ff;
+}
+
+.album-cover {
+    height: 300px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+
+    background-size: cover;
+    background-position: center;
+}
+
+.album-cover span {
+    font-size: 45px;
+    font-weight: bold;
+    opacity: .8;
+}
+
+.album-one {
+    background:
+        linear-gradient(135deg, #6424a8aa, #111827aa),
+        url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80");
+}
+
+.album-two {
+    background:
+        linear-gradient(135deg, #d52b8baa, #312e81aa),
+        url("https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=800&q=80");
+}
+
+.album-three {
+    background:
+        linear-gradient(135deg, #e56b28aa, #7e22ceaa),
+        url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80");
+}
+
+.album-four {
+    background:
+        linear-gradient(135deg, #0369a1aa, #7e22ceaa),
+        url("https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=800&q=80");
+}
+
+.album-five {
+    background:
+        linear-gradient(135deg, #be185daa, #312e81aa),
+        url("https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80");
+}
+
+.album-six {
+    background:
+        linear-gradient(135deg, #2563ebaa, #0891b2aa),
+        url("https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=800&q=80");
+}
+
+.album-card p {
+    color: #9999a9;
+    margin-bottom: 15px;
+}
+
+.album-card button {
+    border: none;
+    padding: 10px 18px;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(90deg, #9b3dff, #f03ca8);
+}
+
+/* =====================================
+   EVENTS
+===================================== */
+
+.event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.event-card {
+    padding: 25px;
+    border: 1px solid #29293b;
+    background: #151520;
+    border-radius: 20px;
+
+    display: grid;
+    grid-template-columns: 90px 1fr auto;
+    align-items: center;
+    gap: 25px;
+
+    transition: .3s;
+}
+
+.event-card:hover {
+    border-color: #b945ff;
+    transform: translateX(5px);
+}
+
+.date {
+    width: 75px;
+    height: 75px;
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #9d3dff, #f043a4);
+}
+
+.date strong {
+    font-size: 28px;
+    line-height: 1;
+}
+
+.date span {
+    font-size: 12px;
+}
+
+.event-details h2 {
+    margin-bottom: 8px;
+}
+
+.event-details p {
+    color: #9999a9;
+}
+
+/* =====================================
+   CONTACT
+===================================== */
+
+.contact-section {
+    padding: 70px 7% 120px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.contact-info h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.contact-info > p {
+    color: #9999a9;
+    max-width: 500px;
+}
+
+.contact-item {
+    display: flex;
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.contact-item > span {
+    font-size: 28px;
+}
+
+.contact-item h3 {
+    margin-bottom: 2px;
+}
+
+.contact-item p {
+    color: #9999a9;
+}
+
+form {
+    background: #151520;
+    border: 1px solid #29293b;
+    padding: 35px;
+    border-radius: 22px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 18px;
+
+    background: #0d0d16;
+    border: 1px solid #303044;
+    border-radius: 10px;
+
+    color: white;
+    font-family: inherit;
+    outline: none;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #bb43ff;
+}
+
+form button {
+    width: 100%;
+    padding: 15px;
+
+    border: none;
+    border-radius: 30px;
+
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    background: linear-gradient(
+        90deg,
+        #9b3dff,
+        #f03ca8
+    );
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+    padding: 60px 7%;
+    text-align: center;
+    background: #07070d;
+    border-top: 1px solid #222233;
+}
+
+footer h2 {
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #777789;
+    margin-top: 7px;
+}
+
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 900px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 60px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .music-circle {
+        width: 300px;
+        height: 300px;
+    }
+
+    .vinyl {
+        width: 225px;
+        height: 225px;
+        font-size: 70px;
+    }
+
+    .music-grid,
+    .artist-grid,
+    .album-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gradient-banner {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+
+    .contact-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 20px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 70px 20px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .section {
+        padding: 70px 20px;
+    }
+
+    .music-grid,
+    .artist-grid,
+    .album-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header {
+        padding: 70px 20px;
+    }
+
+    .event-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .date {
+        margin: auto;
+    }
+
+    .gradient-banner {
+        margin: 20px;
+        padding: 40px 20px;
+    }
+
+    .gradient-banner h2 {
+        font-size: 30px;
+    }
+
+    .contact-section {
+        padding: 50px 20px 80px;
+    }
+
+    form {
+        padding: 25px;
+    }
+}
+```
